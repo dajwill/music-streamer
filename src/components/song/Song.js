@@ -18,7 +18,7 @@ class Song extends React.Component {
 
   render() {
     return (
-      <article className="media">
+      <article className="media" onClick={this.handleAdd.bind(this)}>
         <figure className="media-left">
           <p className="image is-64x64">
             <img src={this.props.data.artwork} />
@@ -29,13 +29,6 @@ class Song extends React.Component {
             <h6 className="title is-6 text">{this.props.data.title}</h6>
             <h6 className="subtitle is-6 text">{this.props.data.artists.join(', ')}</h6>
           </div>
-        </div>
-        <div className="media-right">
-          {(this.view === 'player') ? (
-            <i className="fa fa-play" aria-hidden="true" onClick={this.playSong.bind(this)}></i>
-          ) : (
-            <i className="fa fa-plus" aria-hidden="true" onClick={this.handleAdd.bind(this)}></i>
-          )}
         </div>
       </article>
     )

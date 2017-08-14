@@ -5,14 +5,17 @@ import { SearchBar, Song, Player } from './components'
 
 const App = (props) => {
   const { query, songs, queue } = props;
-  let text = 'poop'
   const songList = songs.map((song) => {
     return <Song key={song.id} data={song} />
   })
 
+  const resultsStyle = () => {
+    return queue.length ? { marginBottom: '110px' } : { marginBottom: '20px' }
+  }
+
   const results = (query) => {
-    if (query) {
-      return <div className="App-intro box">
+    if (songs.length) {
+      return <div className="App-intro box" style={resultsStyle()}>
         {songList}
       </div>
     } else {
@@ -31,7 +34,6 @@ const App = (props) => {
   return (
     <div className="App">
       <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <SearchBar />
       </div>
       {results(query)}

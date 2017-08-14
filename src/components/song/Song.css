@@ -5,14 +5,3 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-.dropdown {
-  box-shadow: 0 0 8px #777;
-  display: none;
-  right: 0;
-  position: absolute;
-  top: 100%;
-  z-index: 1000;
-}
-
-.dropdown.is-active { display: block; }
