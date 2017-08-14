@@ -9,7 +9,6 @@ const initState = {
 const action$ = new Subject()
 
 const reducer = (state, action) => {
-  console.log(action.type);
   switch (action.type) {
     case 'SEARCH':
       return {
@@ -18,14 +17,12 @@ const reducer = (state, action) => {
       }
       break;
     case 'MUSIC_LOADING':
-      console.log('yeee 1');
       return {
         ...state,
         isLoading: true
       }
       break;
     case 'MUSIC_LOADED':
-      console.log('yeee 2');
       return {
         ...state,
         isLoading: false,
