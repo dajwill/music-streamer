@@ -1,3 +1,3 @@
 # Streamer
 
-![Alt text](/public/streamer.png?raw=true "App")
+![Alt text](/public/stremer.png?raw=true "App")
