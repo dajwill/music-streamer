@@ -32,6 +32,12 @@ const reducer = (state, action) => {
         songs: action.payload,
       };
       break;
+    case 'ADD_TO_QUEUE':
+      return {
+        ...state,
+        queue: [action.payload]
+      }
+      break;
     default:
       return state
   }
@@ -74,6 +80,11 @@ const search = actionCreator((payload) => {
   };
 });
 
+const addToQueue = actionCreator((payload) => ({
+  type: 'ADD_TO_QUEUE',
+  payload
+}))
+
 // const ensureObservable = (action) => {
 //   console.log(action, '~~~~');
 //   (action.payload instanceof Observable)
@@ -90,5 +101,6 @@ const store$ = action$
 
 export {
   store$,
-  search
+  search,
+  addToQueue
 }

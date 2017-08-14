@@ -26,6 +26,8 @@
 .App-intro {
   font-size: large;
   min-height: 65vh;
+  max-height: 65vh;
+  overflow-y: scroll;
   width: 90vw;
   /*border: 1px solid;*/
   background-color: white;

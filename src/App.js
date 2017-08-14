@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { SearchBar, Song } from './components'
+import { SearchBar, Song, Player } from './components'
 
 const App = (props) => {
-  const { query, songs } = props;
+  const { query, songs, queue } = props;
   let text = 'poop'
   const songList = songs.map((song) => {
     return <Song key={song.id} data={song} />
@@ -20,6 +20,14 @@ const App = (props) => {
     }
   }
 
+  const player = () => {
+    if (queue.length) {
+      return <Player queue={queue} />
+    } else {
+      return
+    }
+  }
+
   return (
     <div className="App">
       <div className="App-header">
@@ -27,6 +35,7 @@ const App = (props) => {
         <SearchBar />
       </div>
       {results(query)}
+      {player()}
     </div>
   );
 }
